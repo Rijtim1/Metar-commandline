@@ -15,3 +15,8 @@ def arrival(arrive="KJFK"):
         "https://www.aviationweather.gov/metar/data?ids="+arrive.lower()).read()
     soup = bs.BeautifulSoup(source, "lxml")
     return soup.find("code").string
+
+
+if __name__ == "__main__":
+    print(departure(input("Departure: ")))
+    print(arrival(input("Arrival: ")))
