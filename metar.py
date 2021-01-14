@@ -7,14 +7,16 @@ def departure(depart="KIAD"):
     source = req.urlopen(
         "https://www.aviationweather.gov/metar/data?ids="+depart.lower()).read()
     soup = bs.BeautifulSoup(source, "lxml")
-    return soup.find("code").string
+    metar = soup.find("code").string
+    return metar
 
 
 def arrival(arrive="KJFK"):
     source = req.urlopen(
         "https://www.aviationweather.gov/metar/data?ids="+arrive.lower()).read()
     soup = bs.BeautifulSoup(source, "lxml")
-    return soup.find("code").string
+    metar = soup.find("code").string
+    return metar
 
 
 if __name__ == "__main__":
