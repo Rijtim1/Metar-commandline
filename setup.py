@@ -8,6 +8,6 @@ setup(
         'beautifulsoup4==4.9.1',
     ],
     py_modules=[
-        'weather',
+        'metar',
     ],
 )
